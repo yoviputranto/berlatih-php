@@ -1,9 +1,25 @@
 <?php
-
+function palindrome($angka)
+{
+    $output = false;
+    if (strrev($angka) == $angka) {
+        $output = true;
+    }
+    return $output;
+}
 
 function palindrome_angka($angka)
 {
-
+    if ($angka >= 1 && $angka <= 8) {
+        return $angka + 1 . "<br>";
+    }
+    if (palindrome($angka)) {
+        $angka++;
+    }
+    while (palindrome($angka) == false) {
+        $angka++;
+    }
+    return $angka . "<br>";
     //tulis kode disini
 }
 
